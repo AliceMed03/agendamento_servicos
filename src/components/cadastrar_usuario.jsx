@@ -8,8 +8,15 @@ const Cadastrar_Usuario = () => {
 
   const salvar = async (campos) => {
     try {
-      const response = await api.post("usuarios", campos);
-      setAviso(`Usuário cadastrado com sucesso!"`);
+      // const clienteData = {
+      //   clienteNome: campos.clienteNome,
+      //   clienteCpf: campos.clienteCpf,
+      //   clienteDataNascimento: campos.clienteDataNascimento,
+      //   clienteEmail: campos.clienteEmail,
+      //   clienteSenha: campos.clienteSenha
+      // }
+      const response = await api.post("/cliente", campos);
+      setAviso("Usuário cadastrado com sucesso!");
       reset();
     } catch (error) {
       setAviso("Erro ao cadastrar usuário!");
@@ -21,14 +28,44 @@ const Cadastrar_Usuario = () => {
       <div className="container p-5 bg-light text-dark rounded">
         <h4 className="fst-italic mb-3">Cadastrar Usuário</h4>
         <form onSubmit={handleSubmit(salvar)}>
+        <div className="form-group mt-2">
+            <label htmlFor="nome">Nome:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="clienteNome"
+              required
+              {...register("clienteNome")}
+            />
+          </div>
+          <div className="form-group mt-2">
+            <label htmlFor="nome">CPF:</label>
+            <input
+              type="text"
+              className="form-control"
+              id="clienteCpf"
+              required
+              {...register("clienteCpf")}
+            />
+          </div>
+          <div className="form-group mt-2">
+            <label htmlFor="nome">Data de Nascimento:</label>
+            <input
+              type="date"
+              className="form-control"
+              id="clienteDataNascimento"
+              required
+              {...register("clienteDataNascimento")}
+            />
+          </div>
           <div className="form-group mt-2">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
               className="form-control"
-              id="email"
+              id="clienteEmail"
               required
-              {...register("email")}
+              {...register("clienteEmail")}
             />
           </div>
           <div className="form-group mt-2">
@@ -36,9 +73,9 @@ const Cadastrar_Usuario = () => {
             <input
               type="password"
               className="form-control"
-              id="senha"
+              id="clienteSenha"
               required
-              {...register("senha")}
+              {...register("clienteSenha")}
             />
           </div>
 

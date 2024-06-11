@@ -8,7 +8,7 @@ const Cadastrar_prestador = () => {
 
   const salvar = async (campos) => {
     try {
-      const response = await api.post("prestadores", campos);
+      const response = await api.post("/prestador", campos);
       setAviso(`Prestador cadastrado com sucesso!"`);
       reset();
     } catch (error) {
@@ -24,67 +24,31 @@ const Cadastrar_prestador = () => {
           <div class="row g-3">
             <div className="form-group" class="col-sm-6">
               <label htmlFor="nome">Nome:</label>
-              <input type="text" className="form-control" id="nome" required autoFocus {...register("nome")}/>
+              <input type="text" className="form-control" id="prestadorNome" required autoFocus {...register("prestadorNome")}/>
             </div>
             <div className="form-group" class="col-sm-6">
               <label htmlFor="cpf">CPF:</label>
-              <input type="text" className="form-control" id="cpf" required autoFocus {...register("cpf")}/>
+              <input type="text" className="form-control" id="prestadorCpf" required autoFocus {...register("prestadorCpf")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="email">Email:</label>
-              <input type="email" className="form-control" id="email" required {...register("email")}/>
+              <input type="email" className="form-control" id="prestadorEmail" required {...register("prestadorEmail")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="status">Senha:</label>
-              <input type="password" className="form-control" id="senha" required {...register("senha")}/>
+              <input type="password" className="form-control" id="prestadorSenha" required {...register("prestadorSenha")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="razao_social">Razão Social:</label>
-              <input type="text" className="form-control" id="razao_social" required {...register("razao_social")}/>
+              <input type="text" className="form-control" id="prestadorRazaoSocial"/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="nome_fantasia">Nome Fantasia:</label>
-              <input type="text" className="form-control" id="nome_fantasia" required {...register("nome_fantasia")}/>
+              <input type="text" className="form-control" id="prestadorNomeFantasia" />
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="cnpj">CNPJ:</label>
-              <input type="text" className="form-control" id="cnpj" required {...register("cnpj")}/>
-            </div>
-            <div className="form-group mt-2" class="col-sm-6">
-              <label htmlFor="telefone">Telefone:</label>
-              <input type="text" className="form-control" id="telefone" required {...register("telefone")}/>
-            </div>
-            <div className="form-group" class="col-sm-6">
-              <label htmlFor="cep">CEP:</label>
-              <input type="text" className="form-control" id="cep" required autoFocus {...register("cep")}/>
-            </div>
-            <div className="form-group" class="col-sm-6">
-              <label htmlFor="rua">Rua:</label>
-              <input type="text" className="form-control" id="rua" required autoFocus {...register("rua")}/>
-            </div>
-            <div className="form-group" class="col-sm-6">
-              <label htmlFor="bairro">Bairro:</label>
-              <input type="text" className="form-control" id="bairro" required autoFocus {...register("bairro")}/>
-            </div>
-            <div className="form-group" class="col-sm-6">
-              <label htmlFor="cidade">Cidade:</label>
-              <input type="text" className="form-control" id="cidade" required autoFocus {...register("cidade")}/>
-            </div>
-            <div className="form-group" class="col-sm">
-              <label htmlFor="estado">Estado:</label>
-              <input type="text" className="form-control" id="estado" required autoFocus {...register("estado")}/>
-            </div>
-            <div className="form-group" class="col-sm">
-              <label htmlFor="pais">País:</label>
-              <input type="text" className="form-control" id="pais" required autoFocus {...register("pais")}/>
-            </div>
-            <div className="form-group" class="col-sm">
-              <label htmlFor="numero">Número:</label>
-              <input type="number" className="form-control" id="numero" required autoFocus {...register("numero")}/>
-            </div>
-            <div className="form-group" class="col-sm-6">
-              <label htmlFor="complemento">Complemento:</label>
-              <input type="text" className="form-control" id="complemento" required autoFocus {...register("complemento")}/>
+              <input type="text" className="form-control" id="prestadorCnpj"/>
             </div>
           </div>
                    
