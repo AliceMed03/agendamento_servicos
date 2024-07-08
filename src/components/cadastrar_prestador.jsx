@@ -40,16 +40,20 @@ const Cadastrar_prestador = () => {
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="razao_social">Razão Social:</label>
-              <input type="text" className="form-control" id="prestadorRazaoSocial"/>
+              <input type="text" className="form-control" id="prestadorRazaoSocial"  {...register("prestadorRazaoSocial")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="nome_fantasia">Nome Fantasia:</label>
-              <input type="text" className="form-control" id="prestadorNomeFantasia" />
+              <input type="text" className="form-control" id="prestadorNomeFantasia" {...register("prestadorNomeFantasia")} />
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="cnpj">CNPJ:</label>
-              <input type="text" className="form-control" id="prestadorCnpj"/>
+              <input type="text" className="form-control" id="prestadorCnpj" {...register("prestadorCnpj")}/>
             </div>
+            <div className="form-group mt-2">
+            <label htmlFor="nome">Telefone:</label>
+            <input type="text" className="form-control" id="prestadorTelefone" required {...register("prestadorTelefone")}/>
+          </div>
           </div>
                    
           <input type="submit" className="btn btn-primary mt-3" value="Enviar"/>

@@ -18,6 +18,7 @@ const Agendamento = () => {
     const fetchServicos = async () => {
         try {
             const response = await api.get("/servicos");
+            console.log(response.data);
             setServicos(response.data);
         } catch (error) {
             console.error("Erro ao buscar serviços", error);
