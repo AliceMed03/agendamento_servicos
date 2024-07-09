@@ -18,7 +18,6 @@ const Agendamento = () => {
     const fetchServicos = async () => {
         try {
             const response = await api.get("/servicos");
-            console.log(response.data);
             setServicos(response.data);
         } catch (error) {
             console.error("Erro ao buscar serviços", error);
@@ -45,8 +44,8 @@ const handleServicoChange = (event) => {
   const servicoEncontrado = servicos.find(servicos => servicos.idServicos === parseInt(event.target.value, 10));        
   const servicosNome = servicoEncontrado?.servicosNome;
 
-  setSelectedServicosNome(servicosNome);
-  buscarPrestadoresPorNomeServico(servicosNome);
+  setSelectedServicosNome(event.target.value);
+  buscarPrestadoresPorNomeServico(event.target.value);
 };
 
 const salvar = async (campos) => {
