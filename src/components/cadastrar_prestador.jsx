@@ -24,36 +24,36 @@ const Cadastrar_prestador = () => {
           <div class="row g-3">
             <div className="form-group" class="col-sm-6">
               <label htmlFor="nome">Nome:</label>
-              <input type="text" className="form-control" id="prestadorNome" required autoFocus {...register("prestadorNome")}/>
+              <input type="text" className="form-control" id="prestador_nome" required autoFocus {...register("prestador_nome")}/>
             </div>
             <div className="form-group" class="col-sm-6">
               <label htmlFor="cpf">CPF:</label>
-              <input type="text" className="form-control" id="prestadorCpf" required autoFocus {...register("prestadorCpf")}/>
+              <input type="text" className="form-control" id="prestador_cpf" required autoFocus {...register("prestador_cpf")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="email">Email:</label>
-              <input type="email" className="form-control" id="prestadorEmail" required {...register("prestadorEmail")}/>
+              <input type="email" className="form-control" id="prestador_email" required {...register("prestador_email")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="status">Senha:</label>
-              <input type="password" className="form-control" id="prestadorSenha" required {...register("prestadorSenha")}/>
+              <input type="password" className="form-control" id="prestador_senha" required {...register("prestador_senha")}/>
             </div>
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="razao_social">Razão Social:</label>
-              <input type="text" className="form-control" id="prestadorRazaoSocial"  {...register("prestadorRazaoSocial")}/>
+              <input type="text" className="form-control" id="prestador_razaoSocial"  {...register("prestador_razaoSocial")}/>
             </div>
-            <div className="form-group mt-2" class="col-sm-6">
+            {/* <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="nome_fantasia">Nome Fantasia:</label>
               <input type="text" className="form-control" id="prestadorNomeFantasia" {...register("prestadorNomeFantasia")} />
-            </div>
+            </div> */}
             <div className="form-group mt-2" class="col-sm-6">
               <label htmlFor="cnpj">CNPJ:</label>
-              <input type="text" className="form-control" id="prestadorCnpj" {...register("prestadorCnpj")}/>
+              <input type="text" className="form-control" id="prestador_cnpj" {...register("prestador_cnpj")}/>
             </div>
-            <div className="form-group mt-2">
+            {/* <div className="form-group mt-2">
             <label htmlFor="nome">Telefone:</label>
             <input type="text" className="form-control" id="prestadorTelefone" required {...register("prestadorTelefone")}/>
-          </div>
+          </div> */}
           </div>
                    
           <input type="submit" className="btn btn-primary mt-3" value="Enviar"/>

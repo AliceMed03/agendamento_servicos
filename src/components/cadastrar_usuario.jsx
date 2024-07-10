@@ -33,9 +33,9 @@ const Cadastrar_Usuario = () => {
             <input
               type="text"
               className="form-control"
-              id="clienteNome"
+              id="cliente_nome"
               required
-              {...register("clienteNome")}
+              {...register("cliente_nome")}
             />
           </div>
           <div className="form-group mt-2">
@@ -43,9 +43,9 @@ const Cadastrar_Usuario = () => {
             <input
               type="text"
               className="form-control"
-              id="clienteCpf"
+              id="cliente_cpf"
               required
-              {...register("clienteCpf")}
+              {...register("cliente_cpf")}
             />
           </div>
           <div className="form-group mt-2">
@@ -53,12 +53,12 @@ const Cadastrar_Usuario = () => {
             <input
               type="date"
               className="form-control"
-              id="clienteDataNascimento"
+              id="cliente_dataNascimento"
               required
-              {...register("clienteDataNascimento")}
+              {...register("cliente_dataNascimento")}
             />
           </div>
-          <div className="form-group mt-2">
+          {/* <div className="form-group mt-2">
             <label htmlFor="nome">Telefone:</label>
             <input
               type="text"
@@ -67,15 +67,15 @@ const Cadastrar_Usuario = () => {
               required
               {...register("clienteTelefone")}
             />
-          </div>
+          </div> */}
           <div className="form-group mt-2">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
               className="form-control"
-              id="clienteEmail"
+              id="email"
               required
-              {...register("clienteEmail")}
+              {...register("email")}
             />
           </div>
           <div className="form-group mt-2">
@@ -83,9 +83,9 @@ const Cadastrar_Usuario = () => {
             <input
               type="password"
               className="form-control"
-              id="clienteSenha"
+              id="cliente_senha"
               required
-              {...register("clienteSenha")}
+              {...register("cliente_senha")}
             />
           </div>
 

@@ -1,42 +1,28 @@
-import MenuSuperior from './components/MenuSuperior'
-import FormularioLogin from './components/login';
-import Cadastrar_Usuarios from './components/cadastrar_usuario';
+
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { AuthProvider, useAuth } from './components/AuthProvider';
+import FormularioLogin from './components/login';
 import Cadastrar_prestador from './components/cadastrar_prestador';
+import Cadastrar_Usuarios from './components/cadastrar_usuario';
 import Agendamento from './components/agendamento';
-;
+import MenuSuperior from './components/MenuSuperior';
+import useAuth from './components/useAuth'; // Ajuste o caminho conforme necessário
 
-const ProtectedRoute = ({ children }) => {
-    const { autenticado } = useAuth();
-    return autenticado ? children : <Navigate to="/login" />;
-};
-
-const RoutesWithAuth = () => {
+const App = () => {
     const { autenticado } = useAuth();
 
     return (
         <Router>
-            {/*autenticado && <MenuSuperior>*/}
+            {autenticado && <MenuSuperior />}
             <Routes>
                 <Route path="/login" element={<FormularioLogin />} />
-                <Route path="/" element={autenticado ? <Navigate to="/tarefas" /> : <FormularioLogin />} />
-                <Route path="/prestador" element={<><MenuSuperior/><Cadastrar_prestador /></>} />
-                <Route path="/user" element={<><MenuSuperior /><Cadastrar_Usuarios /></>} />
-                <Route path="/agendamento" element={<><MenuSuperior /><Agendamento /></>} />
-
+                <Route path="/" element={autenticado ? <Navigate to="/agendamento" /> : <FormularioLogin />} />
+                <Route path="/prestadores" element={autenticado ? <Cadastrar_prestador /> : <Navigate to="/login" />} />
+                <Route path="/user" element={autenticado ? <Cadastrar_Usuarios /> : <Navigate to="/login" />} />
+                <Route path="/agendamento" element={autenticado ? <Agendamento /> : <Navigate to="/login" />} />
             </Routes>
         </Router>
     );
 };
 
-const App = () => {
-    return (
-        <AuthProvider>
-            <RoutesWithAuth/>
-        </AuthProvider>
-    );
-};
-  
 export default App;
